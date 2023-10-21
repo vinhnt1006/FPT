@@ -1,0 +1,24 @@
+Output
+Before Sorting
+
+Name= John, Age= 20, Scores= 80
+Name= Anish, Age= 21, Scores= 50
+Name= Berry, Age= 22, Scores= 87
+Name= Patrick, Age= 20, Scores= 90
+Name= Alexa, Age= 19, Scores= 84
+Name= Cindy, Age= 25, Scores= 96
+Name= Sandy, Age= 16, Scores= 76
+Name= Tom, Age= 18, Scores= 75
+Name= Jerry, Age= 17, Scores= 79
+
+sorting
+
+Name= Alexa, Age= 19, Scores= 84
+Name= Anish, Age= 21, Scores= 50
+Name= Berry, Age= 22, Scores= 87
+Name= Cindy, Age= 25, Scores= 96
+Name= Jerry, Age= 17, Scores= 79
+Name= John, Age= 20, Scores= 80
+Name= Patrick, Age= 20, Scores= 90
+Name= Sandy, Age= 16, Scores= 76
+Name= Tom, Age= 18, Scores= 75

@@ -1,0 +1,5 @@
+Product list
+Name	Quantity	Price
+SS note 10	4	13000000.0
+Iphone11	5	14000000.0
+Nokia C100	1	20000000.0
