@@ -1,0 +1,13 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+94:DB:DA:4A:0C:70, 2018-02-12 13:25:16, 2018-02-12 13:25:51, 11,  54, WPA2WPA , CCMP TKIP,PSK, -60,      349,     1364,   0.  0.  0.  0,  11, Hoang Thanh, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+34:4D:F7:59:E9:5A, 2018-02-12 13:25:16, 2018-02-12 13:25:45, -87,     1259, 94:DB:DA:4A:0C:70,
+A8:7C:01:C2:B4:6B, 2018-02-12 13:25:35, 2018-02-12 13:25:42, -84,       45, 94:DB:DA:4A:0C:70, Hoang Thanh
+36:CE:00:04:6D:FF, 2018-02-12 13:25:17, 2018-02-12 13:25:50, -84,       23, 94:DB:DA:4A:0C:70,
+E0:50:8B:6C:F5:1D, 2018-02-12 13:25:19, 2018-02-12 13:25:47, -82,       11, 94:DB:DA:4A:0C:70,
+D0:B1:28:EA:1F:D3, 2018-02-12 13:25:21, 2018-02-12 13:25:41, -69,       82, 94:DB:DA:4A:0C:70,
+88:C9:D0:C2:F2:96, 2018-02-12 13:25:33, 2018-02-12 13:25:33, -63,        5, 94:DB:DA:4A:0C:70,
+A0:93:47:92:F0:53, 2018-02-12 13:25:16, 2018-02-12 13:25:17, -61,        5, 94:DB:DA:4A:0C:70,
+
